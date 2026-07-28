@@ -1,0 +1,20 @@
+// Design tokens from DESIGN.md
+export const COLORS = {
+  primary: '#4648d4',
+  primaryIndigo: '#6366F1',
+  primaryContainer: '#6063ee',
+  onPrimary: '#ffffff',
+  background: '#faf8ff',
+  surface: '#faf8ff',
+  surfaceLowest: '#ffffff',
+  surfaceLow: '#f2f3ff',
+  surfaceHigh: '#e2e7ff',
+  surfaceHighest: '#dae2fd',
+  onBackground: '#131b2e',
+  onSurface: '#131b2e',
+  onSurfaceVariant: '#464554',
+  outlineVariant: '#c7c4d7',
+  error: '#ba1a1a',
+  errorContainer: '#ffdad6',
+  onErrorContainer: '#93000a',
+};

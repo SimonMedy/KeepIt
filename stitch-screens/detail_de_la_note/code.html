@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Détail de la note - NéoNotes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-background": "#131b2e",
+                        "surface-container-high": "#e2e7ff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#41474e",
+                        "tertiary": "#565d63",
+                        "secondary": "#5c5f61",
+                        "inverse-primary": "#c0c1ff",
+                        "on-tertiary-fixed": "#161c22",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "surface-variant": "#dae2fd",
+                        "on-secondary-fixed": "#191c1e",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#dae2fd",
+                        "inverse-surface": "#283044",
+                        "on-secondary-container": "#626567",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f2f3ff",
+                        "secondary-fixed-dim": "#c4c7c9",
+                        "surface": "#faf8ff",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#eef0ff",
+                        "outline": "#767586",
+                        "on-surface": "#131b2e",
+                        "surface-bright": "#faf8ff",
+                        "primary-fixed": "#e1e0ff",
+                        "tertiary-fixed-dim": "#c1c7cf",
+                        "on-secondary": "#ffffff",
+                        "background": "#faf8ff",
+                        "surface-dim": "#d2d9f4",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#dde3eb",
+                        "tertiary-container": "#6f757c",
+                        "on-primary-fixed": "#07006c",
+                        "surface-tint": "#494bd6",
+                        "surface-container": "#eaedff",
+                        "outline-variant": "#c7c4d7",
+                        "primary": "#4648d4",
+                        "secondary-container": "#e0e3e5",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "on-primary-container": "#fffbff",
+                        "on-surface-variant": "#464554",
+                        "secondary-fixed": "#e0e3e5",
+                        "on-secondary-fixed-variant": "#444749",
+                        "primary-container": "#6063ee",
+                        "on-tertiary-container": "#fcfcff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "stack-sm": "8px",
+                        "gutter-mobile": "12px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "24px",
+                        "stack-md": "16px",
+                        "unit": "4px"
+                    },
+                    fontFamily: {
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    fontSize: {
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- Header (Navigation) -->
+<header class="w-full top-0 sticky bg-background flex items-center justify-between px-margin-mobile py-stack-md z-40">
+<button class="flex items-center text-primary hover:bg-surface-container-low transition-colors rounded-lg px-2 py-1 -ml-2">
+<span class="material-symbols-outlined mr-1 text-[20px]" data-icon="arrow_back" data-weight="regular">arrow_back</span>
+<span class="font-label-md text-label-md">Retour</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile text-on-surface">Détail de la note</h1>
+<!-- Trailing action (e.g., Edit or Share) -->
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-full p-2 -mr-2">
+<span class="material-symbols-outlined" data-icon="edit" data-weight="regular">edit</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-grow px-margin-mobile py-stack-lg max-w-3xl mx-auto w-full">
+<!-- Note Header Info -->
+<div class="mb-stack-lg">
+<h2 class="font-display-lg text-display-lg mb-stack-sm text-on-surface leading-tight">Liste de courses</h2>
+<div class="flex items-center flex-wrap gap-2">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="calendar_today" data-weight="regular">calendar_today</span>
+                    Créé le 12 Octobre
+                </span>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="folder" data-weight="regular">folder</span>
+                    Personnel
+                </span>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                    Favori
+                </span>
+</div>
+</div>
+<!-- Note Body Content -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-lg shadow-sm">
+<div class="font-body-lg text-body-lg text-on-surface space-y-4">
+<p>
+                    Il faut absolument que je pense à acheter de quoi préparer le repas de ce week-end. Les invités arrivent vers 19h samedi, donc il va falloir s'organiser.
+                </p>
+<p>
+<strong>Rayon Frais :</strong>
+</p>
+<ul class="list-disc pl-5 space-y-1">
+<li>Poulet fermier (un beau de préférence)</li>
+<li>Crème fraîche épaisse</li>
+<li>Beurre demi-sel (très important pour la cuisson)</li>
+<li>Fromage : Comté affiné, un peu de chèvre frais</li>
+</ul>
+<p>
+<strong>Fruits &amp; Légumes :</strong>
+</p>
+<ul class="list-disc pl-5 space-y-1">
+<li>Pommes de terre grenailles</li>
+<li>Carottes fanes</li>
+<li>Une belle salade (mâche ou roquette)</li>
+<li>Citrons jaunes (x3)</li>
+<li>Herbes fraîches : coriandre, ciboulette</li>
+</ul>
+<p>
+<strong>Épicerie :</strong>
+</p>
+<ul class="list-disc pl-5 space-y-1">
+<li>Vin blanc sec pour la sauce</li>
+<li>Huile d'olive (vérifier s'il en reste à la maison)</li>
+<li>Sel de Guérande</li>
+</ul>
+<p>
+<em>Note à moi-même :</em> Ne pas oublier de passer à la boulangerie pour prendre une baguette tradition bien cuite juste avant qu'ils n'arrivent.
+                </p>
+<!-- Added visual interest for a checklist interactive feel -->
+<div class="mt-stack-lg border-t border-outline-variant pt-stack-md">
+<h3 class="font-headline-sm text-headline-sm mb-stack-sm">Tâches urgentes</h3>
+<div class="space-y-2">
+<label class="flex items-center cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded text-primary border-outline-variant focus:ring-primary focus:ring-offset-background bg-surface-container-lowest" type="checkbox"/>
+<span class="ml-3 font-body-md text-body-md text-on-surface-variant line-through group-hover:text-on-surface transition-colors">Vérifier les stocks dans les placards</span>
+</label>
+<label class="flex items-center cursor-pointer group">
+<input class="w-5 h-5 rounded text-primary border-outline-variant focus:ring-primary focus:ring-offset-background bg-surface-container-lowest" type="checkbox"/>
+<span class="ml-3 font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Appeler le boucher pour réserver le poulet</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button for easy sharing/actions, contextually relevant to note detail -->
+<button class="fixed bottom-margin-mobile right-margin-mobile w-14 h-14 bg-primary text-on-primary rounded-full shadow-[0_4px_12px_rgba(15,23,42,0.15)] flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container active:scale-95 transition-all z-50 md:hidden">
+<span class="material-symbols-outlined text-[24px]" data-icon="share" data-weight="regular">share</span>
+</button>
+</body></html>

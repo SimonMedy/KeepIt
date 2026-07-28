@@ -1,0 +1,13 @@
+# Dépendances et fichiers générés
+node_modules/
+.expo/
+dist*/
+supabase/.temp/
+
+# Variables locales et secrets
+.env
+.env.local
+
+# Système et éditeurs
+.DS_Store
+*.log
