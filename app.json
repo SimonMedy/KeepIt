@@ -2,14 +2,23 @@
   "expo": {
     "name": "KeepIt",
     "slug": "keepit",
+    "owner": "yxtomix",
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true
     },
+    "android": {
+      "package": "com.yxtomix.keepit"
+    },
     "web": {
       "bundler": "metro"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ef85012b-c89b-4998-b020-a41ec1a3e3de"
+      }
     }
   }
 }
