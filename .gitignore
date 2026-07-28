@@ -3,6 +3,8 @@ node_modules/
 .expo/
 dist*/
 supabase/.temp/
+*.apk
+*.aab
 
 # Variables locales et secrets
 .env
