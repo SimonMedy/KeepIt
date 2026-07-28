@@ -4,6 +4,7 @@ import { View, StyleSheet, Platform, Text, ScrollView } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AppNavigator from './src/navigation/AppNavigator';
 import { AppPreferencesProvider } from './src/context/AppPreferencesContext';
+import { useAppPreferences } from './src/context/AppPreferencesContext';
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -41,14 +42,23 @@ class ErrorBoundary extends React.Component {
 export default function App() {
   return (
     <ErrorBoundary>
-      <View style={styles.container}>
-        <SafeAreaProvider>
-          <AppPreferencesProvider>
-            <AppNavigator />
-          </AppPreferencesProvider>
-        </SafeAreaProvider>
-      </View>
+      <SafeAreaProvider>
+        <AppPreferencesProvider>
+          <AppContent />
+        </AppPreferencesProvider>
+      </SafeAreaProvider>
     </ErrorBoundary>
+  );
+}
+
+function AppContent() {
+  const { colorScheme } = useAppPreferences();
+  const backgroundColor = colorScheme === 'dark' ? '#111522' : '#faf8ff';
+
+  return (
+    <View style={[styles.container, { backgroundColor }]}> 
+      <AppNavigator />
+    </View>
   );
 }
 
@@ -57,7 +67,6 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     height: Platform.OS === 'web' ? '100vh' : '100%',
-    backgroundColor: '#faf8ff',
   },
   errorContainer: {
     flex: 1,

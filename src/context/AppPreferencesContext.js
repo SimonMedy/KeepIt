@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useColorScheme } from 'nativewind';
 
@@ -9,8 +9,12 @@ const AppPreferencesContext = createContext(null);
 export function AppPreferencesProvider({ children }) {
   const { colorScheme, setColorScheme } = useColorScheme();
   const [favoriteIds, setFavoriteIds] = useState([]);
+  const didLoadPreferences = useRef(false);
 
   useEffect(() => {
+    if (didLoadPreferences.current) return undefined;
+    didLoadPreferences.current = true;
+
     async function loadPreferences() {
       const [savedTheme, savedFavorites] = await Promise.all([
         AsyncStorage.getItem(THEME_KEY),
@@ -22,7 +26,8 @@ export function AppPreferencesProvider({ children }) {
     }
 
     loadPreferences().catch(() => {});
-  }, [setColorScheme]);
+    return undefined;
+  }, []);
 
   const setTheme = useCallback(
     async (theme) => {

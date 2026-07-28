@@ -34,7 +34,10 @@ export default function AppNavigator() {
         initialRouteName="Home"
         screenOptions={{
           headerShown: false,
-          animation: 'fade',
+          // La barre flottante se comporte comme des onglets : un changement
+          // instantané évite d'exposer le fond du navigator entre deux écrans.
+          animation: 'none',
+          contentStyle: { backgroundColor: colorScheme === 'dark' ? '#111522' : '#faf8ff' },
         }}
       >
         <Stack.Screen name="Home" component={HomeScreen} />

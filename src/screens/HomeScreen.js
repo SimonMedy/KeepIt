@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { FlatList, RefreshControl, StatusBar, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -19,6 +19,7 @@ export default function HomeScreen({ navigation }) {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState(null);
+  const initialLoadFinished = useRef(false);
 
   const fetchNotes = useCallback(async (pullToRefresh = false) => {
     try {
@@ -34,14 +35,17 @@ export default function HomeScreen({ navigation }) {
   }, []);
 
   useEffect(() => {
-    fetchNotes();
+    fetchNotes().finally(() => {
+      initialLoadFinished.current = true;
+    });
   }, [fetchNotes]);
 
-  // Réactualise la liste après un retour depuis le détail (ex. suppression).
+  // Réactualise seulement lors d'un nouveau focus, jamais à chaque mise à jour
+  // de l'état de chargement.
   useFocusEffect(
     useCallback(() => {
-      if (!loading) fetchNotes(true);
-    }, [fetchNotes, loading])
+      if (initialLoadFinished.current) fetchNotes(true);
+    }, [fetchNotes])
   );
 
   const handleAddNote = async (title) => {
